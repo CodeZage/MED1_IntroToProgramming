@@ -10,41 +10,32 @@ void setup() {
   int _petals = 7;
   int _pc = #FFA000;
 
-  myFlower1 = new Flower(_r1, _petals, _x1, _y1+10, _pc, xSpeed, ySpeed);
-  myFlower2 = new Flower(_r1, _petals, _x2+random(-100, 100), _y2, _pc, xSpeed, ySpeed);
-  myFlower3 = new Flower(_r1, _petals, _x3+50, _y3, _pc, xSpeed, ySpeed);
-}
+
+  myFlower1 = new Flower(_r1, _petals, random(0,width), random(0,height), _pc, random(1, 10), random(1, 10));
+  myFlower2 = new Flower(_r1, _petals, random(0,width), random(0,height), _pc, random(1, 10), random(1, 10));
+  myFlower3 = new Flower(_r1, _petals, random(0,width), random(0,height), _pc, random(1, 10), random(1, 10));
+} 
 
 void draw() {
 
   background(#43AF76);
 
-  myFlower1.display();
-  myFlower2.display();
-  myFlower3.display();
+  myFlower1.displayFlower();
+  myFlower2.displayFlower();
+  myFlower3.displayFlower();
 
   myFlower1.move();
   myFlower2.move();
   myFlower3.move();
 
-  if (x >= width) {
-    myFlower1.bounceX();
-    myFlower2.bounceX();
-    myFlower3.bounceX();
-  }
-  if (x <= 0) {
-    myFlower1.bounceX();
-    myFlower2.bounceX();
-    myFlower3.bounceX();
-  }
-  if (y >= height) {
-    myFlower1.bounceY();
-    myFlower2.bounceY();
-    myFlower3.bounceY();
-  }
-  if (y <= 0) {
-    myFlower1.bounceY();
-    myFlower2.bounceY();
-    myFlower3.bounceY();
-  }
+  myFlower1.bounceX();
+  myFlower2.bounceX();
+  myFlower3.bounceX();
+
+  myFlower1.bounceY();
+  myFlower2.bounceY();
+  myFlower3.bounceY();
+  
+  myFlower1.overlap(myFlower3);
+
 }

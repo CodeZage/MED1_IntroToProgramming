@@ -1,19 +1,9 @@
-float x;       // x-position of the center of the flower
-float xSpeed = random(1, 10);
-float ySpeed = random(1, 10);
-float y;       // y-position of the center of the flower
-
-float _x1 = random(0, width);
-float _x2 = random(0, width);
-float _x3 = random(0, width);
-float _y1 = random(0, height);
-float _y2 = random(0, height);
-float _y3 = random(0, height);
-
 class Flower {
 
-  // Variables
-
+  float xSpeed;
+  float ySpeed;
+  float x; 
+  float y;       
   float r;       // radius of the flower petal
   int nPetals;  // number of petals 
   int petalColor;//hexadecimal number for the color of petals
@@ -29,7 +19,7 @@ class Flower {
   }
 
   //Draws the flower
-  void display () {
+  void displayFlower () {
 
     float ballX;
     float ballY;
@@ -50,11 +40,22 @@ class Flower {
     x += xSpeed;
     y += ySpeed;
   }
-
+  
+  boolean overlap(Flower otherFlower) { 
+    if (dist(x, y, otherFlower.x , otherFlower.y) < (r+(otherFlower.r*2)));
+    {
+      return true;
+    }
+  }  
+  
   void bounceX() {
-    xSpeed = xSpeed*-1;
+    if (this.x >= width || this.x <= 0) {
+      this.xSpeed *= -1;
+    }
   }
   void bounceY() {
-    ySpeed *= -1;
+   if (this.y >= height || this.y <= 0) {
+      this.ySpeed *= -1;
+    }
   }
 }
