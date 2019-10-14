@@ -11,9 +11,9 @@ void setup() {
   int _pc = #FFA000;
 
 
-  myFlower1 = new Flower(_r1, _petals, random(0,width), random(0,height), _pc, random(1, 10), random(1, 10));
-  myFlower2 = new Flower(_r1, _petals, random(0,width), random(0,height), _pc, random(1, 10), random(1, 10));
-  myFlower3 = new Flower(_r1, _petals, random(0,width), random(0,height), _pc, random(1, 10), random(1, 10));
+  myFlower1 = new Flower(_r1, _petals, random(0,width), random(0,height), _pc, random(-10, 10), random(-10, 10));
+  myFlower2 = new Flower(_r1, _petals, random(0,width), random(0,height), _pc, random(-10, 10), random(-10, 10));
+  myFlower3 = new Flower(_r1, _petals, random(0,width), random(0,height), _pc, random(-10, 10), random(-10, 10));
 } 
 
 void draw() {

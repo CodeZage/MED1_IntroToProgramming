@@ -37,8 +37,8 @@ class Flower {
   }
 
   void move() {
-    x += xSpeed;
-    y += ySpeed;
+    this.x += this.xSpeed;
+    this.y += this.ySpeed;
   }
   
   boolean overlap(Flower otherFlower) { 
@@ -49,13 +49,13 @@ class Flower {
   }  
   
   void bounceX() {
-    if (this.x >= width || this.x <= 0) {
-      this.xSpeed *= -1;
+    if (x >= width || x <= 0) {
+      xSpeed *= -1;
     }
   }
   void bounceY() {
-   if (this.y >= height || this.y <= 0) {
-      this.ySpeed *= -1;
+   if (y >= height || y <= 0) {
+      ySpeed *= -1;
     }
   }
 }
