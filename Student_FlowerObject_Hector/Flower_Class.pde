@@ -1,3 +1,7 @@
+int num = 50;
+int[] posX = new int [num];
+int[] posY = new int [num];
+
 class Flower {
 
   // Variables
@@ -104,6 +108,19 @@ class Flower {
     if (x > width-r || x < r || y > height || y < 0) {
       fill(0,0,255);
       ellipse(x, y, r*1.2, r*1.2);
+    }
+  }
+  
+  void trail() {
+    for (int i = num-1; i > 0; i--) {
+      posX[i] = posX[i-1];
+      posY[i] = posY[i-1];
+    }
+    posX[0] = mouseX;
+    posY[0] = mouseY;
+    
+    for (int i = 0; i < num; i++) {
+      ellipse(posX[i], posY[i], i*-1, i*-1);        
     }
   }
   

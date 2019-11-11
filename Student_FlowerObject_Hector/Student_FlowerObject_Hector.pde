@@ -1,3 +1,5 @@
+Flower[] flowers = new Flower [10];
+
 Flower myFlower1;  // the first instance of the Flower class
 Flower myFlower2;  // the second instance of the Flower class
 Flower myFlower3;
@@ -17,7 +19,7 @@ void setup() {
   int offset = 350;
   int col1 = #E873DC;
 
-
+ 
   myFlower1 = new Flower (_r1, _petals, _x, _y, _pc, 2, 3); 
   myFlower2 = new Flower (_r2, _petals, _x+random(-500, 500), _y+offset, _pc, 5, 4);
   myFlower3 = new Flower (_r3, _petals, _x+50, _y-offset, _pc, 7, 5);
@@ -27,7 +29,7 @@ void setup() {
 
 void draw() {
   background(#43AF76);
-
+  
   myFlower1.overlap(myFlower2);
   myFlower1.overlap(myFlower3);
   myFlower2.overlap(myFlower3);
@@ -53,5 +55,7 @@ void draw() {
   myFlower1.bounceY();
   myFlower2.bounceY();
   myFlower3.bounceY();
+  
+  myFlowerMouse.trail();
 
 }
