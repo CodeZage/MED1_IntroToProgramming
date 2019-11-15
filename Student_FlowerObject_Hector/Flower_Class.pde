@@ -120,7 +120,8 @@ class Flower {
     posY[0] = mouseY;
     
     for (int i = 0; i < num; i++) {
-      ellipse(posX[i], posY[i], i*-1, i*-1);        
+      fill(200, 150, 150, 80);
+      ellipse(posX[i], posY[i], 80-i, 80-i);        
     }
   }
   
