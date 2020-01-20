@@ -6,6 +6,8 @@ Flower myFlower3;
 Flower myFlowerMouse;
 Flower myFlowerBox;
 
+color randomBackgroundColor;
+
 void setup() {
   size(1600, 1200);
 
@@ -29,7 +31,8 @@ void setup() {
 
 void draw() {
   background(#43AF76);
-  
+  mousePushed();
+
   myFlower1.overlap(myFlower2);
   myFlower1.overlap(myFlower3);
   myFlower2.overlap(myFlower3);
@@ -58,4 +61,17 @@ void draw() {
   
   myFlowerMouse.trail();
 
+}
+
+void mousePressed()
+{
+  randomBackgroundColor = color(random(0, 255), random(0, 255), random(0, 255));
+}
+
+void mousePushed() 
+{
+  if (mousePressed == true)
+  {
+    background(randomBackgroundColor);
+  }
 }
